@@ -1,5 +1,5 @@
 ---
-layout: _socialmedia
+layout: socialmedia
 title: instagram
 username: jus.lesjak
 url: https://www.instagram.com/jus.lesjak/

@@ -20,18 +20,26 @@ author_firstname: Juš
 author_lastname: Lesjak
 author_job: Programmer / Student
 author_email: lesjak.jus@gmail.com
+author_phone: 0038630260470
 author_birth: 26 Sep 2001 - Kranj, SLOVENIA
+author_address: Valjavčeva 33 - 4000 Kranj - SLOVENIA
+
+cv_avatar: 
 cv_description: Nek motovational 30 sec elevator pitch k se ga morm se zmislt.
+cv_thankyou: Thank you!
+cv_quote: “Whether you say, ‘I can’ or ‘I can’t,’ you’re right either way.”
+cv_quote_author: Jordan Belfort
+
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  jekyll
-github_url: 
-instagram_username: jekyllrb
-instagram_url:
+
+github_username:  CDESLAYR
+github_url: https://github.com/CDESLAYR
+
 
 collections:
   fragmetns:

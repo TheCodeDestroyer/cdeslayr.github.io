@@ -61,11 +61,11 @@
     <div class="tp-loader spinner"></div>
     <!-- Edit With Your Name -->
     <div class="side-menu-name">
-      {{ author_firstname }} <strong> {{ author_lastname }} </strong>
+      {{ page.author_firstname }} <strong> {{ page.author_lastname }} </strong>
     </div>
     <!-- /Edit With Your Name -->
     <!-- Edit With Your Job -->
-    <p class="side-menu-job"> {{ author_job }} </p>
+    <p class="side-menu-job"> {{ page.author_job }} </p>
     <!-- /Edit With Your Job -->
   </div>   
 </div>
@@ -88,11 +88,11 @@
   <!-- Menu header -->
   <div class="side-menu-name">
     <!-- edit with your name -->
-    {{ author_firstname }} <strong> {{ author_lastname }} </strong>
+    {{ page.author_firstname }} <strong> {{ page.author_lastname }} </strong>
     <!-- /edit with your name -->
   </div>
   <!-- edit with your Job -->
-  <p class="side-menu-job"> {{ author_job }} </p>
+  <p class="side-menu-job"> {{ page.author_job }} </p>
   <!-- /edit with your job -->
   <!-- /Menu Header -->
 
@@ -168,13 +168,13 @@
         <!-- Right Columm -->
         <div class="col-md-7">
           <!-- Welcome Title-->
-          <h1 class="intro-title1">Hey, i'm <span class="color1 bold">{{ author_firstname }} {{ author_lastname }} </span></h1>
+          <h1 class="intro-title1">Hey, i'm <span class="color1 bold">{{ page.author_firstname }} {{ page.author_lastname }} </span></h1>
           <!-- /Welcome Title -->
           <!-- Job - -->
-          <h2 class="intro-title2">{{ author_job }}</h2>
+          <h2 class="intro-title2">{{ page.author_job }}</h2>
           <!-- /job -->
           <!-- Description -->
-          <p><strong> {{ cv_description }} </strong> {{ cv_description }} <strong> {{ cv_description }} </strong>. {{ cv_description }} <strong> {{ cv_description }} </strong> {{ cv_description }} .</p>
+          <p><strong> {{ page.cv_description }} </strong> {{ page.cv_description }} <strong> {{ page.cv_description }} </strong>. {{ cv_description }} <strong> {{ cv_description }} </strong> {{ cv_description }} .</p>
           <!-- /Description -->
         </div>
         <!-- /Right Collum -->
@@ -218,77 +218,9 @@
             </div>
             <!-- /SECTION TITLE -->
 
-            <!-- SECTION ITEM -->
-            <div class="line row">
-              <!-- Margin Collums (necessary for the timeline effect) -->
-              <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-              <div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>
-              <!-- /Margin Collums -->
-              <!-- Item Content -->
-              <div class="col-md-8 content-wrap bg1">
-                <div class="line-content">
-                  <!-- Subtitle -->
-                  <h3 class="section-item-title-1"> {{ author_firstname }} {{ author_lastname }} </h3>
-                  <!-- /Subtitle -->
-                  <!-- content -->
-                  <p> {{ author_email }} </p>
-                  <!-- /Content -->
-                </div>
-              </div>
-              <!-- /Item Content -->
-              <!-- Margin Collum-->
-              <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-              <!-- /Margin Collum-->
-            </div>
-            <!-- /SECTION ITEM -->
-            
-            <!-- SECTION ITEM -->
-            <div class="line row">
-              <!-- Margin Collums (necessary for the timeline effect) -->
-              <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-              <div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>
-              <!-- /Margin Collums -->
-              <!-- Item Content -->
-              <div class="col-md-8 content-wrap bg1">
-                <div class="line-content">
-                  <!-- Subtitle -->
-                  <h3 class="section-item-title-1">Born</h3>
-                  <!-- /Subtitle -->
-                  <!-- content -->
-                  <p> {{ author_birth }} </p>
-                  <!-- /Content -->
-                </div>
-              </div>
-              <!-- /Item Content -->
-              <!-- Margin Collum-->
-              <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-              <!-- /Margin Collum-->
-            </div>
-            <!-- /SECTION ITEM -->   
-
-            <!-- SECTION ITEM -->
-            <div class="line row">
-              <!-- Margin Collums (necessary for the timeline effect) -->
-              <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-              <div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>
-              <!-- /Margin Collums -->
-              <!-- Item Content -->
-              <div class="col-md-8 content-wrap bg1">
-                <div class="line-content">
-                  <!-- Subtitle -->
-                  <h3 class="section-item-title-1">Email</h3>
-                  <!-- /Subtitle -->
-                  <!-- content -->
-                  <p> {{ author_email }} </p>
-                  <!-- /Content -->
-                </div>
-              </div>
-              <!-- /Item Content -->
-              <!-- Margin Collum -->
-              <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-              <!-- /Margin Collums -->
-            </div>
-            <!-- /SECTION ITEM --> 
+            {% for info in site.profileInfos%}
+              {info.content}
+            {% endfor %}
 
             <!-- SECTION ITEM -->
             <div class="line row">
@@ -305,7 +237,11 @@
                   <!-- content -->
 
                   {% for social in site.socialmedia %}
+
                   <a href="{{ social.url }}" class="btn btn-default"><i class="{{ social.icon }}"></i></a>
+
+                  {% endfor %}
+
                   <!-- /Content -->
                 </div>
               </div>
@@ -351,13 +287,12 @@
             </div>
             <!-- /SECTION TITLE -->
 
-            <!-- SECTION ITEM -->
             {% for education in site.education %}
 
                 {{ education.content }}
 
             {% endfor %}
-            <!-- /SECTION ITEM -->   
+ 
           </section>
           <!-- ==>> /SECTION: EDUCATION <<==== -->  
 
@@ -393,14 +328,12 @@
             </div>
             <!-- /SECTION TITLE -->
 
-            <!-- SECTION ITEM -->
-
             {% for work in site.work %}
 
               {{ work.content }}
 
             {% endfor %}
-            <!-- /SECTION ITEM -->
+
           </section>
           <!-- ==>> /SECTION: WORK EXPERIENCE <<==== --> 
 
@@ -436,15 +369,12 @@
             </div>
             <!-- /SECTION TITLE -->
 
-            <!-- SECTION ITEM -->
-
             {% for skills in site.skills %}
 
               {{ skills.content }}
 
             {% endfor %}
 
-            <!-- /SECTION ITEM -->
           </section>
           <!-- ==>> /SECTION: SKILLS -->
 
@@ -480,15 +410,12 @@
             </div>
             <!-- /SECTION TITLE -->
 
-            <!-- SECTION ITEM -->
-
             {% for interest in site.interests %}
 
               {{ interest.content }}
 
             {% endfor %}
 
-            <!-- /SECTION ITEM -->
           </section>
           <!-- ==>> /SECTION: INTERESTS -->
 
@@ -534,169 +461,17 @@
               <div class="col-md-8 content-wrap bg1">
                 <div class="line-content">
                   <!-- Subtitle -->
-                  <h3 class="section-item-title-1">Some Works</h3>
+                  <h3 class="section-item-title-1">Some of my Works</h3>
                   <!-- /Subtitle -->
                   <!-- content -->
-                  <div class="portfolio-itens clearfix">                      
-                    <!-- Portfolio item -->
-                    <div class="portfolio-item">
-                      <!-- Link to the item image (Put the long description on  "a" title)-->
-                      <a href="img/portfolio-item-zoom.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie purus." class="nivobox" data-lightbox-gallery="portfolio">
-                        <div class="hover">
-                          <p class="zoomi"><i class="fa fa-search"></i></p>
-                          <!-- Item short title -->
-                          <p class="portfolio-item-title"><strong>John's Rex</strong><br/> Business Card</p>
-                        </div>
-                        <div class="hover-bg-wrapper">
-                          <div class="hover-bg"></div>
-                        </div>
-                        <div class="portfolio-item-thumbnail">
-                          <!-- Thumbnail of the portfolio image (400x360 for retina display) -->
-                          <img src="img/portfolio-item-thumb.jpg" alt="">
-                        </div>                        
-                      </a>
-                    </div>
-                    <!-- /Portfolio item -->  
+                  <div class="portfolio-itens clearfix">  
+                    
+                    {% for item in site.portfolio %}
 
-                    <!-- Portfolio item -->
-                    <div class="portfolio-item">
-                      <!-- Link to the item image (Put the long description on  "a" title)-->
-                      <a href="img/portfolio-item-zoom.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie purus." class="nivobox" data-lightbox-gallery="portfolio">
-                        <div class="hover">
-                          <p class="zoomi"><i class="fa fa-search"></i></p>
-                          <!-- Item short title -->
-                          <p class="portfolio-item-title"><strong>John's Rex</strong><br/> Website</p>
-                        </div>
-                        <div class="hover-bg-wrapper">
-                          <div class="hover-bg"></div>
-                        </div>
-                        <div class="portfolio-item-thumbnail">
-                          <!-- Thumbnail of the portfolio image (400x360 for retina display) -->
-                          <img src="img/portfolio-item-thumb.jpg" alt="">
-                        </div>                        
-                      </a>
-                    </div>
-                    <!-- /Portfolio item -->    
+                      {{ item.content }}
+        
+                    {% endfor %}
 
-                    <!-- Portfolio item -->
-                    <div class="portfolio-item">
-                      <!-- Link to the item image (Put the long description on  "a" title)-->
-                      <a href="img/portfolio-item-zoom.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie purus." class="nivobox" data-lightbox-gallery="portfolio">
-                        <div class="hover">
-                          <p class="zoomi"><i class="fa fa-search"></i></p>
-                          <!-- Item short title -->
-                          <p class="portfolio-item-title"><strong>Spetacular</strong><br/>Shirt Design</p>
-                        </div>
-                        <div class="hover-bg-wrapper">
-                          <div class="hover-bg"></div>
-                        </div>
-                        <div class="portfolio-item-thumbnail">
-                          <!-- Thumbnail of the portfolio image (400x360 for retina display) -->
-                          <img src="img/portfolio-item-thumb.jpg" alt="">
-                        </div>                        
-                      </a>
-                    </div>
-                    <!-- /Portfolio item -->   
-
-                    <!-- Portfolio item -->
-                    <div class="portfolio-item">
-                      <!-- Link to the item image (Put the long description on  "a" title)-->
-                      <a href="img/portfolio-item-zoom.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie purus." class="nivobox" data-lightbox-gallery="portfolio">
-                        <div class="hover">
-                          <p class="zoomi"><i class="fa fa-search"></i></p>
-                          <!-- Item short title -->
-                          <p class="portfolio-item-title"><strong>Mr. Chicken</strong><br/> Website</p>
-                        </div>
-                        <div class="hover-bg-wrapper">
-                          <div class="hover-bg"></div>
-                        </div>
-                        <div class="portfolio-item-thumbnail">
-                          <!-- Thumbnail of the portfolio image (400x360 for retina display) -->
-                          <img src="img/portfolio-item-thumb.jpg" alt="">
-                        </div>                        
-                      </a>
-                    </div>
-                    <!-- /Portfolio item -->  
-
-                    <!-- Portfolio item -->
-                    <div class="portfolio-item">
-                      <!-- Link to the item image (Put the long description on  "a" title)-->
-                      <a href="img/portfolio-item-zoom.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie purus." class="nivobox" data-lightbox-gallery="portfolio">
-                        <div class="hover">
-                          <p class="zoomi"><i class="fa fa-search"></i></p>
-                          <!-- Item short title -->
-                          <p class="portfolio-item-title"><strong>Super Lab</strong><br/> Website</p>
-                        </div>
-                        <div class="hover-bg-wrapper">
-                          <div class="hover-bg"></div>
-                        </div>
-                        <div class="portfolio-item-thumbnail">
-                          <!-- Thumbnail of the portfolio image (400x360 for retina display) -->
-                          <img src="img/portfolio-item-thumb.jpg" alt="">
-                        </div>                        
-                      </a>
-                    </div>
-                    <!-- /Portfolio item -->  
-
-                    <!-- Portfolio item -->
-                    <div class="portfolio-item">
-                      <!-- Link to the item image (Put the long description on  "a" title)-->
-                      <a href="img/portfolio-item-zoom.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie purus." class="nivobox" data-lightbox-gallery="portfolio">
-                        <div class="hover">
-                          <p class="zoomi"><i class="fa fa-search"></i></p>
-                          <!-- Item short title -->
-                          <p class="portfolio-item-title"><strong>Awesome</strong><br/> Branding</p>
-                        </div>
-                        <div class="hover-bg-wrapper">
-                          <div class="hover-bg"></div>
-                        </div>
-                        <div class="portfolio-item-thumbnail">
-                          <!-- Thumbnail of the portfolio image (400x360 for retina display) -->
-                          <img src="img/portfolio-item-thumb.jpg" alt="">
-                        </div>                        
-                      </a>
-                    </div>
-                    <!-- /Portfolio item -->   
-
-                    <!-- Portfolio item -->
-                    <div class="portfolio-item">
-                      <!-- Link to the item image (Put the long description on  "a" title)-->
-                      <a href="img/portfolio-item-zoom.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie purus." class="nivobox" data-lightbox-gallery="portfolio">
-                        <div class="hover">
-                          <p class="zoomi"><i class="fa fa-search"></i></p>
-                          <!-- Item short title -->
-                          <p class="portfolio-item-title"><strong>Petrelli's</strong><br/> Business Card</p>
-                        </div>
-                        <div class="hover-bg-wrapper">
-                          <div class="hover-bg"></div>
-                        </div>
-                        <div class="portfolio-item-thumbnail">
-                          <!-- Thumbnail of the portfolio image (400x360 for retina display) -->
-                          <img src="img/portfolio-item-thumb.jpg" alt="">
-                        </div>                        
-                      </a>
-                    </div>
-                    <!-- /Portfolio item -->   
-
-                    <!-- Portfolio item -->
-                    <div class="portfolio-item">
-                      <!-- Link to the item image (Put the long description on  "a" title)-->
-                      <a href="img/portfolio-item-zoom.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie purus." class="nivobox" data-lightbox-gallery="portfolio">
-                        <div class="hover">
-                          <p class="zoomi"><i class="fa fa-search"></i></p>
-                          <!-- Item short title -->
-                          <p class="portfolio-item-title"><strong>Guia D</strong><br/> App Design</p>
-                        </div>
-                        <div class="hover-bg-wrapper">
-                          <div class="hover-bg"></div>
-                        </div>
-                        <div class="portfolio-item-thumbnail">
-                          <!-- Thumbnail of the portfolio image (400x360 for retina display) -->
-                          <img src="img/portfolio-item-thumb.jpg" alt="">
-                        </div>                        
-                      </a>
-                    </div>
-                    <!-- /Portfolio item -->                    
                   </div>
                   <!-- /Content -->
                 </div>
@@ -790,11 +565,11 @@
                     <!-- Contact infos -->                 
                     <div class="col-md-4 contact-infos">
                       <h4 class="contact-subtitle-1">Address</h4>
-                      <p>451 Lorem Ipsum, Austin - Texas - U.S.A</p>
+                      <p>{{ author_address }}</p>
                       <h4 class="contact-subtitle-1">Phone</h4>
-                      <p>+61 3 8376 6284</p>
+                      <p>{{ author_phone }}</p>
                       <h4 class="contact-subtitle-1">Mail</h4>
-                      <p>john.Rex@dotrex.com</p>
+                      <p>{{ author_email }}</p>
                     </div>
                     <!-- /Contact infos --> 
                   </div>
@@ -833,7 +608,7 @@
               <div class="col-md-8 content-wrap bg1">
                 <div class="line-content">
                   <!-- Subtitle -->
-                  <h3 class="thank-you">Thank You!</h3>
+                  <h3 class="thank-you">{{ cv_thankyou }}</h3>
                   <!-- /Subtitle -->
                 </div>
               </div>
@@ -852,10 +627,10 @@
       <!-- ============  FOOTER ================= -->
       <footer id="footer" class="row">
         <!-- Put your Quote Here-->
-        <p class="quote">“Ideas are the beginning points of all fortunes”</p>
+        <p class="quote">{{ cv_quote }}</p>
         <!-- /Quote -->
         <!-- Quote Autor -->
-        <p class="author">Napoleon Hill</p>
+        <p class="author">{{ cv_quote_author }}</p>
         <!-- /Quote Autor -->
       </footer>
       <!-- ============  /FOOTER ================= -->
@@ -872,7 +647,7 @@
   <div class="modal-bg"></div>
   <div class="modal-content">
     <h4 class="modal-title"><i class="fa fa-check-circle"></i> Success!</h4>
-    <p>Your message has been sent to us.</p>
+    <p>Your message has been sent to me.</p>
   </div>
 </div>
 <!-- /Form Sucess -->
