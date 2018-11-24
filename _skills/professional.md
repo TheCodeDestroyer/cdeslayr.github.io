@@ -1,10 +1,9 @@
 ---
-layout: skills
 title: Professional Skills
 subtitle1: Communication
-completion1: 70°%
+completion1: 85%
 subtitle2: Leadership
-completion2: 80°%
+completion2: 89%
 subtitle3: Confidence
-completion3: 80°%
+completion3: 78%
 ---

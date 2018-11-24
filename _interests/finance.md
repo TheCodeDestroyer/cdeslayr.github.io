@@ -1,5 +1,4 @@
 ---
-layout: interests
 title: Finance
 ---
-Nek opis financ
+I see finance as a medium through which I intend to give back to both my local Slovenian community and global enviroment. You can't change the world with good intentions only- you need proper action, and such action is conditioned ( possible only) by with mastering the mechanism on which our current global society operates: **bold**money**bold**.

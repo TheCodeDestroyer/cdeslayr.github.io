@@ -1,12 +1,11 @@
 ---
-layout: skills
 title: Language Skills
 subtitle1: German
-completion1: 70°%
+completion1: 67%
 subtitle2: Korean
-completion2: 80°%
+completion2: 4%
 subtitle3: English
-completion3: 80°%
+completion3: 80%
 subtitle4: Slovenian
-completion4: 100°%
+completion4: 100%
 ---

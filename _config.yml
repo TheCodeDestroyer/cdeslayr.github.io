@@ -42,21 +42,71 @@ github_url: https://github.com/CDESLAYR
 
 
 collections:
+  education:
   fragmetns:
-
+  interests:
+  portfolio:
+  profileInfos:
+  skills:
+  socialmedia:
+  work:
 
 defaults:
-  - scope:
+  -
+    scope:
       path: ""
-      type: "fragments"
+      type: "education" 
     values:
-      layout: fragment
-
+      layout: "education"
+  -
+    scope:
+      path: ""
+      type: "fragments" 
+    values:
+      layout: "fragment"
+  -
+    scope:
+      path: ""
+      type: "interests" 
+    values:
+      layout: "interests"
+  -
+    scope:
+      path: ""
+      type: "portfolio" 
+    values:
+      layout: "portfolio"
+  -
+    scope:
+      path: ""
+      type: "profileInfos" 
+    values:
+      layout: "profile"
+  -
+    scope:
+      path: ""
+      type: "skills" 
+    values:
+      layout: "skills"
+  -
+    scope:
+      path: ""
+      type: "work" 
+    values:
+      layout: "work"
+  -
+    scope:
+      path: ""
+      type: "socialmedia" 
+    values:
+      layout: "socialmedia"
+    
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
 
 # # Static files
 # defaults:

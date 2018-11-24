@@ -1,5 +1,4 @@
 ---
-layout: work
 title: 3FS
 job: Intern -
 date: Jun 2018 - Sep 2018

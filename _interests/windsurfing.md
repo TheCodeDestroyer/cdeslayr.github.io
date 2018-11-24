@@ -1,5 +1,4 @@
 ---
-layout: interests
 title: Windsurfing
 ---
-Nek opis windsurfanja
+Thrill, adrenaline and salty water in your eyes! Combine that with the idea of harnessing a elemental force of nature and you get an indescribable  experience of man-nature symbiosis.

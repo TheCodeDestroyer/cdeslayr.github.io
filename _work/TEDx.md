@@ -1,5 +1,4 @@
 ---
-layout: work
 title: TEDxYOUTH@GimnazijaKranj
 job: Organiser -
 date: Dec 2016 - May 2020
