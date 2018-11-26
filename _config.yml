@@ -42,14 +42,14 @@ github_url: https://github.com/CDESLAYR
 
 
 collections:
-  education:
-  fragmetns:
-  interests:
-  portfolio:
-  profileInfos:
-  skills:
-  socialmedia:
-  work:
+  - education
+  - fragmetns
+  - interests
+  - portfolio
+  - profileInfos
+  - skills
+  - socialmedia
+  - work
 
 defaults:
   -
