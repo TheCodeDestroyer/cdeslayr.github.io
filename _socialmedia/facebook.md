@@ -1,6 +1,6 @@
 ---
 title: facebook
 username: 
-url: https://www.facebook.com/jus.lesjak.5
+link: https://www.facebook.com/jus.lesjak.5
 icon: fa fa-facebook
 ---

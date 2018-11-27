@@ -1,5 +1,3 @@
 ---
-layout: fragment
-title: interests
-url: "#interests" 
+title: interests 
 ---

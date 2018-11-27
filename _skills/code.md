@@ -1,9 +1,9 @@
 ---
 title: Code Skills
 subtitle1: HTML5
-completion1: 51%
+completion1: 41%
 subtitle2: Javascript
-completion2: 58%
+completion2: 48%
 subtitle3: Golang
-completion3: 44%
+completion3: 40%
 ---

@@ -1,7 +1,7 @@
 ---
 title: github
 username: CDESLAYR
-url: https://github.com/CDESLAYR
+link: https://github.com/CDESLAYR
 icon: fa fa-github
 
 ---
